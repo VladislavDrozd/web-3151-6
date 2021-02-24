@@ -2,50 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Головна</title>
+    <link rel="stylesheet" href="css/global-styles.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <header>
-        <h1>Персональний блог</h1>
-        <a href="https://github.com/VladislavDrozd" target="_blank"><h3>Сторінка автора &#10138</h3></a>
-        <div>
-            <img src="https://www.crockerart.org/img/logo-square.png" alt="test logo" height="100px">
+        <div class="header-left">
+            <a href="home.html">
+                <img src="https://www.crockerart.org/img/logo-square.png" alt="test logo">
+            </a>
+            <div class="header-center">
+                <h1>Персональний блог</h1>
+                <a href="https://github.com/VladislavDrozd" target="_blank"><h3>Сторінка автора &#10138;</h3></a>
+                <nav>
+                    | <a href="home.html"><b>Головна</b></a>
+                    | <a href="about.html">Про нас</a> |
+                </nav>
+            </div>
         </div>
-        <br>
-        <nav>
-            <a href="about.html">Про нас</a>
-        </nav>
     </header>
 
     <article>
 
-        <h2>Головна</h2>
-
-        <div>
-            <h4><a href="article.html#article1">Стаття 1</a></h4>
-            <p>
+        <div class="article">
+            <a href="article.html#article1"> <h4 class="name">Стаття 1</h4></a>
+            <p class="introduction">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Aliquam aliquid asperiores error labore nam nesciunt numquam qui quidem veniam voluptas...
             </p>
-            <p>
+            <p class="author">
                 Автор такий-то такий-то1
             </p>
-            <p>
+            <p class="publish-date">
                 2021-12-03
             </p>
         </div>
 
-        <div>
-            <h4><a href="article.html#article2">Стаття 2</a></h4>
-            <p>
+        <div class="article">
+            <a href="article.html#article2"> <h4 class="name">Стаття 2</h4></a>
+            <p class="introduction">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aspernatur at corporis
                 cupiditate ea enim ex excepturi facere impedit iure mollitia nam, nihil non perferendis
                 perspiciatis quam recusandae rem sed similique sit velit voluptate...
             </p>
-            <p>
+            <p class="author">
                 Автор такий-то такий-то2
             </p>
-            <p>
+            <p class="publish-date">
                 2021-01-25
             </p>
         </div>
