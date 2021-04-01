@@ -1,5 +1,5 @@
 @media (max-width: 1200px) {
-    article {
+    main {
         margin-left: 5%;
 		margin-right: 5%;
     }
@@ -10,17 +10,17 @@
 }
 
 @media (max-width: 500px) {
-    article section {
+    main .post {
 			display: block;
 		}
-		article .posts section .post-img {
+		main .posts .post .post-img {
 			margin-right: 0;
 		}
-		article .posts section .post-img img {
+		main .posts .post .post-img img {
 			min-height: auto;
 			max-width: 100%;
 		}
-		article .posts section .post-content .date {
+		main .posts .post .post-content .date {
 			padding-top: 10px;
 		}
 }
