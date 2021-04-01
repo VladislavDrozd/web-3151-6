@@ -1,26 +1,26 @@
 @media (max-width: 1200px) {
-    .main {
+    article {
         margin-left: 5%;
-				margin-right: 5%;
+		margin-right: 5%;
     }
-		.footer {
+		footer  {
         margin-left: 5%;
-				margin-right: 5%;
+		margin-right: 5%;
     }
 }
 
 @media (max-width: 500px) {
-    .main .post {
+    article section {
 			display: block;
 		}
-		.main .posts .post .post-img {
+		article .posts section .post-img {
 			margin-right: 0;
 		}
-		.main .posts .post .post-img img {
+		article .posts section .post-img img {
 			min-height: auto;
 			max-width: 100%;
 		}
-		.main .posts .post .post-content .date {
+		article .posts section .post-content .date {
 			padding-top: 10px;
 		}
 }
