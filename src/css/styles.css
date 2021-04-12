@@ -112,6 +112,11 @@ main .posts .post .header {
 	word-spacing: 4px;
 }
 
+main .posts .post .header a {
+	text-decoration: none;
+	color: #535358;
+}
+
 main .posts .post .body {
 	padding-top: 12px;
 	line-height: 30px;

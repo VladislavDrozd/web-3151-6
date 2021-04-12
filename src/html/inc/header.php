@@ -1,5 +1,6 @@
 <?php
     /** @var string $currentPage */
+    require_once 'inc/functions.php';
 ?>
 
 <!doctype html>
@@ -19,12 +20,14 @@
 <header>
     <nav>
         <ul>
-            <li><a href="#">
+            <li><a href="index.php">
                     <img src="../media/img/logo.png" alt="">
                 </a></li>
             <li><a <?php echo $currentPage==='home' ? 'class=\'current\'' : '' ?> href="index.php">Main</a></li>
             <li><a <?php echo $currentPage==='about' ? 'class=\'current\'' : '' ?> href="about.php">About</a></li>
-            <li><a href="#">Contents</a></li>
+            <?php if($currentPage==='article') {
+                echo '<li><a class="current" href="#">Contents</a></li>';
+            }?>
         </ul>
     </nav>
     <div class="greeting">
