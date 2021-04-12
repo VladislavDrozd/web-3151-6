@@ -1,3 +1,7 @@
+<?php
+    /** @var string $currentPage */
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,8 +22,8 @@
             <li><a href="#">
                     <img src="../media/img/logo.png" alt="">
                 </a></li>
-            <li><a href="#"><b>Main</b></a></li>
-            <li><a href="#">About</a></li>
+            <li><a <?php echo $currentPage==='home' ? 'class=\'current\'' : '' ?> href="index.php">Main</a></li>
+            <li><a <?php echo $currentPage==='about' ? 'class=\'current\'' : '' ?> href="about.php">About</a></li>
             <li><a href="#">Contents</a></li>
         </ul>
     </nav>

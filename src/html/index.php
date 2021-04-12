@@ -1,9 +1,11 @@
 <?php
 
-    require 'header.php';
+    $currentPage = 'home';
 
-    require 'main.php';
+    require 'inc/header.php';
 
-    require 'footer.php';
+    require 'inc/main.php';
+
+    require 'inc/footer.php';
 
 ?>

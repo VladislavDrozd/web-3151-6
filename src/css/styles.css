@@ -20,6 +20,10 @@ header ul a {
 	text-decoration: none;
 	color: black;
 }
+header nav .current {
+	color: red;
+	font-weight: bold;
+}
 
 .greeting {
 	padding-top: 76px;
@@ -165,4 +169,15 @@ footer  .arrow-to-start img {
 	padding-top: 32px;
 	max-width: 71px;
 	max-height: 71px;
+}
+
+/*
+
+	About page
+
+*/
+
+.center-about-heading {
+	text-align: center;
+	margin: 70px auto 10px auto;
 }
