@@ -1,29 +1,22 @@
 <?php
     $currentPage='article';
-    require 'inc/header.php';
+    require_once 'inc/header.php';
 
     $articleId = (int) $_GET['id'];
     $article = getArticle($articleId);
 
+    if ($article === null) {
+        http_response_code(404);
+        require ('error.php');
+        exit();
+    }
+
 ?>
     <main>
         <div class="posts">
-            <article class="post">
-                <div class="post-img">
-                    <img src="../media/img/<?=$article['image'];?>" alt="article image">
-                </div>
-                <div class="post-content">
-                    <p class="date greytxt"><?=$article['date']?></p>
-                    <h2 class="header"><?=$article['title'];?></h2>
-                    <div class="body">
-                        <p><?=$article['content'];?></p>
-                    </div>
-                    <div class="hashtags">
-                        <a href="#">#hashtag1</a>
-                        <a href="#">#hashtag2</a>
-                    </div>
-                </div>
-            </article>
+            <?php
+                require 'inc/article.php'
+            ?>
         </div>
     </main>
 

@@ -5,7 +5,7 @@
 ?>
 
 <main>
-    <h1 class="center-about-heading">About</h1>
+    <h1 class="center-heading">About</h1>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus, assumenda autem et ex fugit id nam
         nemo nesciunt nihil nulla omnis praesentium, quas quis recusandae repellendus tenetur ullam veniam! Dignissimos
