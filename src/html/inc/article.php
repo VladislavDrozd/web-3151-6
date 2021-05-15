@@ -4,13 +4,13 @@
 
 <article class="post">
     <div class="post-img">
-        <img src="../media/img/<?=$article['image'];?>" alt="article image">
+        <img src="<?=$APP_CONSTANTS['MEDIA_DIR'].$article['image'];?>" alt="article image">
     </div>
     <div class="post-content">
         <p class="date greytxt"><?=$article['date']?></p>
-        <h2 class="header">
+        <h1 class="header">
             <a href="article.php?id=<?=$article['id']?>"><?=$article['title'];?></a>
-        </h2>
+        </h1>
         <div class="body">
             <p><?=$article['content'];?></p>
         </div>

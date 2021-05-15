@@ -1,5 +1,8 @@
 <?php
-    /** @var string $currentPage */
+    /**
+     * @var string $currentPage
+     * @var mixed[] $APP_CONSTANTS
+     */
     require_once 'inc/functions.php';
 ?>
 
@@ -21,7 +24,7 @@
     <nav>
         <ul>
             <li><a href="index.php">
-                    <img src="../media/img/logo.png" alt="">
+                    <img src=<?=$APP_CONSTANTS['MEDIA_DIR'].'img/logo.png'?> alt="">
                 </a></li>
             <li><a <?php echo $currentPage==='home' ? 'class=\'current\'' : '' ?> href="index.php">Main</a></li>
             <li><a <?php echo $currentPage==='about' ? 'class=\'current\'' : '' ?> href="about.php">About</a></li>
