@@ -92,6 +92,8 @@ main .post {
 	margin-bottom: 15px;
 }
 
+
+
 main .posts .post .post-img {
 	padding-top: 30px;
 	margin-right: 30px;
@@ -132,12 +134,25 @@ main .posts .post .hashtags a {
 	color: #d20068;
 	padding-right: 10px;
 }
+
+main .statistic {
+	border: 1px solid red;
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+
 main .comment-form {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-evenly;
 	align-items: baseline;
+	margin-bottom: 20px;
+}
+main .commentaries .comment {
+	border: 1px solid red;
+	margin-bottom: 10px;
+	font-size: 25px;
 }
 
 main .paginator {

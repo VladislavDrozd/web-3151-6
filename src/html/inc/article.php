@@ -1,5 +1,13 @@
 <?php
     /** @var mixed[] $article */
+    $comments = getComments($article['id']);
+    if (count($comments) > 0) {
+        $rateArray = [];
+        foreach ($comments as $comment) {
+            $rateArray[] = $comment['rate'];
+        }
+        $averageRate = array_sum($rateArray) / count($rateArray);
+    }
 ?>
 
 <article class="post">
@@ -16,3 +24,11 @@
         </div>
     </div>
 </article>
+<?php
+if (count($comments) > 0) {
+    echo '<div class="statistic">';
+    echo '<p>Commentaries: '.count($comments).'</p>';
+    echo '<p>AverageRate: '.$averageRate.'</p>';
+    echo '</div>';
+}
+?>

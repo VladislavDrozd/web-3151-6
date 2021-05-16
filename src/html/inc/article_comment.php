@@ -36,3 +36,11 @@
 
     <input type="submit" value="Send">
 </form>
+
+<div class="commentaries">
+    <?php
+    foreach (getComments($article['id']) as $comment) {
+        require 'inc/comment.php';
+    }
+    ?>
+</div>

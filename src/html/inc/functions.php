@@ -52,4 +52,15 @@ function getConnection() {
         }
     }
 
+    function getComments(int $articleId) {
+        $commentArray = [];
+        $connection = getConnection();
+        $sql = "SELECT * FROM main.comment WHERE post_id = {$articleId}";
+        $comments = $connection->query($sql);
+        while ($comment = $comments->fetchArray(SQLITE3_ASSOC)) {
+            $commentArray[] = $comment;
+        }
+        return $commentArray;
+    }
+
 ?>
