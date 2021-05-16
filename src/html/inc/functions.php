@@ -1,32 +1,38 @@
 <?php
 
+    $APP_LINK = 'http://localhost:8080/web-3151-6/';
     $APP_CONSTANTS = [
-        'APP_LINK' => 'http://localhost:8080/web-3151-6/',
-        'MEDIA_DIR'=> 'http://localhost:8080/web-3151-6/src/media/'
+        'MEDIA_DIR'=> $APP_LINK.'src/media/',
+        'DB_PATH' => 'D:\lamp\htdocs\web-3151-6\db\sqlight'
     ];
 
+function getConnection() {
+    try {
+        $connection = new SQLite3($GLOBALS['APP_CONSTANTS']['DB_PATH'], SQLITE3_OPEN_READWRITE);
+    } catch(Exception $ex) {
+        http_response_code(500);
+        require ('error.php');
+        exit();
+    }
+    return $connection;
+}
+
     function getArticles() {
-        $testContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries';
-        return [
-            ['id'=>1, 'title'=>'Title 1', 'content'=>$testContent, 'image'=>'img/test-img.png', 'date'=>'01.01.2001'],
-            ['id'=>2, 'title'=>'Title 2', 'content'=>$testContent, 'image'=>'img/test-img.png', 'date'=>'02.02.2002'],
-            ['id'=>3, 'title'=>'Title 3', 'content'=>$testContent, 'image'=>'img/test-img.png', 'date'=>'03.03.2003']
-        ];
+        $articleArray = [];
+        $connection = getConnection();
+        $sql = 'SELECT * FROM main.post ORDER BY create_date DESC LIMIT 5';
+        $articles = $connection->query($sql);
+        while ($article = $articles->fetchArray(SQLITE3_ASSOC)) {
+            $articleArray[] = $article;
+        }
+        return $articleArray;
     }
 
-    function getArticle($id) {
-        static $articles;
-        if ($articles === null) {
-            $articles = getArticles();
-        }
-
-        foreach ($articles as $article) {
-            if ($article['id'] === $id) {
-                return $article;
-            }
-        }
-
-        return null;
+    function getArticle(int $id) {
+        $connection = getConnection();
+        $sql = "SELECT * FROM main.post WHERE id = {$id}";
+        $articles = $connection->query($sql);
+        return $articles->fetchArray(SQLITE3_ASSOC) ?: null;
     }
 
 ?>

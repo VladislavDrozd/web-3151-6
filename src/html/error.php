@@ -1,5 +1,5 @@
 <?php
-    $currentPage='404error';
+    $currentPage='Error';
     $responseStatusCode = http_response_code();
     $pageTitle = '';
     if ($responseStatusCode === 404) {
