@@ -89,7 +89,7 @@ main .posts {
 main .post {
 	display: flex;
 	flex-direction: row;
-	margin-bottom: 54px;
+	margin-bottom: 15px;
 }
 
 main .posts .post .post-img {
@@ -131,6 +131,13 @@ main .posts .post .hashtags a {
 	text-decoration: none;
 	color: #d20068;
 	padding-right: 10px;
+}
+main .comment-form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: baseline;
 }
 
 main .paginator {

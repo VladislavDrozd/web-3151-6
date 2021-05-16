@@ -11,11 +11,17 @@
         exit();
     }
 
+    if (isset($_GET['warnMsg'])) {
+        echo '<script language="javascript">';
+        echo 'alert("'.$_GET['warnMsg'].'")';
+        echo '</script>';
+    }
+
 ?>
     <main>
         <div class="posts">
             <?php
-                require 'inc/article.php'
+                require 'inc/article_comment.php'
             ?>
         </div>
     </main>
