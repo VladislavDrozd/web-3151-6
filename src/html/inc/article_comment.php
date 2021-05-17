@@ -34,13 +34,30 @@
 
     <input type="hidden" name="articleId" value="<?=$article['id']?>">
 
-    <input type="submit" value="Send">
+    <input type="submit" value="submit">
 </form>
 
 <div class="commentaries">
     <?php
-    foreach (getComments($article['id']) as $comment) {
-        require 'inc/comment.php';
-    }
+        $comments = getComments($article['id']);
+        while ($comment = array_pop($comments)) {
     ?>
+        <div class="comment">
+            <h6>Author: <?=$comment['author']?><h6>
+            <p>Rate: <?=$comment['rate']?><p>
+            <p>Comment: <?=$comment['content']?><p>
+        </div>
+    <?php }?>
 </div>
+
+<script>
+    let $form = jQuery('.comment-form');
+    $form.on('submit', function () {
+        jQuery.post($form.attr('action'), $form.serialize(), function (response) {
+            let $response = jQuery(response);
+            $form.html($response.find('.comment-form').html());
+            jQuery(`.commentaries`).html($response.find('.commentaries').html());
+        });
+        return false;
+    })
+</script>
