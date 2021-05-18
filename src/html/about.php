@@ -1,6 +1,6 @@
 <?php
+    require_once 'inc/functions.php';
     $currentPage='about';
-
     require 'inc/header.php';
 ?>
 

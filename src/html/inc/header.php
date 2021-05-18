@@ -3,7 +3,6 @@
      * @var string $currentPage
      * @var mixed[] $APP_CONSTANTS
      */
-    require_once 'inc/functions.php';
 ?>
 
 <!doctype html>
