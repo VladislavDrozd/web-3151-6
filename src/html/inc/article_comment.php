@@ -16,12 +16,28 @@
         </div>
     </div>
 </article>
-<form class="comment-form" action="inc/article_comment_form.php" method="POST">
-    <label for="author">Author:</label>
-    <input type="text" id="author" name="author">
+<form class="comment-form" action="article.php?action=addComment&id=<?=$articleId?>" method="POST">
+    <div class="elem">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" value="<?=htmlspecialchars($author ?? null)?>">
 
-    <label for="comment">Comment:</label>
-    <textarea id="comment" name="comment"></textarea>
+        <?php if(isset($errors['author'])) {?>
+            <div class="error">
+                <?= $errors['author']?>
+            </div>
+        <?php } ?>
+    </div>
+
+    <div class="elem">
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment"><?=htmlspecialchars($comment ?? null)?></textarea>
+
+        <?php if(isset($errors['comment'])) {?>
+            <div class="error">
+                <?= $errors['comment']?>
+            </div>
+        <?php } ?>
+    </div>
 
     <label for="rate">Evaluate article:</label>
     <select id="rate" name="rate">
@@ -32,9 +48,7 @@
         <option value="5">5</option>
     </select>
 
-    <input type="hidden" name="articleId" value="<?=$article['id']?>">
-
-    <input type="submit" value="submit">
+    <input type="submit" value="Send">
 </form>
 
 <div class="commentaries">
