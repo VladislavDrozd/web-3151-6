@@ -36,7 +36,7 @@ function getConnection() {
         return $articles->fetchArray(SQLITE3_ASSOC) ?: null;
     }
 
-    function saveComment(int $articleId, $author, $content, int $rate) {
+    function saveComment(int $articleId, string $author, string $content, int $rate) {
         $connection = getConnection();
         $sql = "INSERT INTO main.comment (post_id, rate, content, author) VALUES (:articleId, :rate, :content, :author)";
         $stmt = $connection->prepare($sql);
